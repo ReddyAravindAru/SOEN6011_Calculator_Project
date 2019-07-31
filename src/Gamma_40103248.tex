@@ -1,0 +1,221 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOCUMENT PREAMBLE %%%
+\documentclass[12pt]{report}
+\usepackage[english]{babel}
+%\usepackage{natbib}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\title{Software Engineering Process - SOEN 6011}	
+% Title
+\author{ }	
+% Author
+\date{}
+% Date
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\centering
+    \vspace*{0.5 cm}
+   % \includegraphics[scale = 0.075]{bsulogo.png}\\[1.0 cm]	% University Logo
+\begin{center}    \textsc{\Large   }\\[2.0 cm]	\end{center}% University Name
+\textsc{\Large Individual Report  }\\[0.5 cm]	% Course Code
+\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+{ \huge \bfseries \thetitle}\\
+\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \large
+%	\emph{Submitted To:}\\
+%	Name\\
+          % Affiliation\\
+           %contact info\\
+\end{center}
+\end{minipage}~
+\begin{center}{}
+            
+\begin{center} \large
+\emph{Submitted By :} \\
+Aravind Ashoka Reddy  \\
+40103248 \\
+
+\end{center}
+           
+\end{center}\\[2 cm]
+
+
+    
+    
+    
+    
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thesection}{\arabic{section}}
+\section{Problem 1}
+\textbf{Function assigned: Γ(x)}\\
+The (complete) gamma function     is defined to be an extension of the factorial to complex and real number arguments. It is related to the factorial by\\
+
+
+
+The gamma function is given by this integral for all positive xx. Then there exists an analytic function with domain C∖{0,−1,−2,…},  such that its restriction to positive axis coincides with the value of that integral. \\
+\begin{center}
+	C/{ n∈Z, n≤0}\\
+\includegraphics[]{Untitled1.png}\\
+\end{center}
+Properties of the Gamma Function\\
+   \includegraphics[]{Untitled.png}
+ 
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Problem 2}
+\begin{center}
+    
+
+\begin{center}
+    \textbf{Requirements}\large
+\end{center}
+\textbf{R-1} : When the input for Gamma function is received, the user defined function checks the input if it is 1, then outputs the gamma value as 1.\\
+\textbf{R-2} : When the input ½ is received, the user defined function checks if the input is equal to ½, if yes outputs the gamma value as √\pi.\\
+
+
+\textbf{R-3} : when the input for the program is a non-positive integer, the function which calculates the gamma value discards the input and prints invalid input.\\
+
+
+
+\textbf{R-4} : When the input (x) is a positive integer, the function validates and returns a gamma value approximate to (x-1)!\\
+
+
+
+
+\newpage
+\section{Problem 3}
+\textbf{Algorithm with Stirling’s Approximation}\\
+This algorithm using sterling's approximation for giving precision. Technically sterling's approximation gives the best precision for any gamma value.
+
+\textbf  {\large Algorithm A.{\rom 1} }: Calculating Gamma value using sterling's precision\\
+
+\begin{algorithm}
+\caption{My algorithm1}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{CalculateGamma}{x}
+\State $\textit{stringlen} \gets \text{length of }\textit{string}$
+\State $E \gets \textit{2.7182818284}$
+\State $PI \gets \textit{3.1415926535}$
+
+
+
+
+\BState \emph{loop}:
+\If {$\textit{string}(i) = \textit{path}(j)$}
+\State $j \gets j-1$.
+\State $i \gets i-1$.
+\State \textbf{goto} \emph{loop}.
+\State \textbf{close};
+\EndIf
+\State $i \gets i+\max(\textit{delta}_1(\textit{string}(i)),\textit{delta}_2(j))$.
+\State \textbf{goto} \emph{top}.
+
+\EndProcedure
+
+\Procedure{squarerootCalc}{x}
+
+\If{ Val == 0} \Return 0 
+\EndIf
+\State $last \gets \textit{0.0}$
+\State $res \gets \textit{1.0}$
+
+\BState \emph{loop}:
+\If {$\textit{res} == \textit{last}$}
+     
+
+\State $last \gets res$.
+\State $res \gets (res {+} 2 \div res) \div 2  $.
+\State \textbf{goto} \emph{loop}.
+\State \textbf{close};
+\EndIf
+\State \Return res
+
+
+\EndProcedure
+
+\Procedure{powerCalc}{N,x}
+\If{ x == 0} \Return 1 
+
+
+\EndIf
+
+
+
+
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
+ 
+\begin{thebibliography}{111}
+   
+  \bibitem{ACMT}
+http://mathworld.wolfram.com/GammaFunction.html
+
+%if the "underfill \hbox" warning bothers you uncomment the following line
+%\raggedright
+\bibitem{ACAMP}
+    https://www.probabilitycourse.com/chapter4/4_2_4_Gamma_distribution.php
+  
+\bibitem{Gro01} 
+   https://math.stackexchange.com/questions/705103/what-is-the-domain-of-gamma-function
+
+\end{thebibliography}
+\end{document}
+
+%This template was created by Roza Aceska.
